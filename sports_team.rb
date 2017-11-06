@@ -1,6 +1,6 @@
 class SportsTeam
 
-attr_reader :team_name, :team_members
+attr_reader :team_name, :team_members, :points
 attr_accessor :coach_name
 
   def initialize(original_team_name, original_team_members, current_coach)
@@ -22,5 +22,10 @@ attr_accessor :coach_name
     end
     return false
   end
+
+ def update_points(game_result)
+  @points += 1 if game_result == "win"
+  end
+
 
 end

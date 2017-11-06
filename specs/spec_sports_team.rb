@@ -37,4 +37,19 @@ class TestSportsTeam < MiniTest::Test
   def test_is_player_in_team__false
     assert_equal(false, @sports_team.is_player_in_team("Jesus"))
   end
+
+  def test_how_many_points
+    assert_equal(0, @sports_team.points)
+  end
+
+  def test_how_many_points__after_win
+    @sports_team.update_points("win")
+    assert_equal(1, @sports_team.points)
+  end
+
+  def test_how_many_points__after_lose
+    @sports_team.update_points("lose")
+    assert_equal(0, @sports_team.points)
+  end
+
 end
