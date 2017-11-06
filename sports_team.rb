@@ -9,6 +9,8 @@ attr_accessor :coach_name
     @coach_name = current_coach
   end
 
-
+  def add_player_name(new_player)
+    @team_members.push("Prince")
+  end
 
 end
