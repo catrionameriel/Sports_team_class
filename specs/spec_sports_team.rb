@@ -29,4 +29,12 @@ class TestSportsTeam < MiniTest::Test
     @sports_team.add_player_name("Prince")
     assert_equal(["John", "Sean", "Peter", "Prince"], @sports_team.team_members)
   end
+
+  def test_is_player_in_team__true
+    assert_equal(true, @sports_team.is_player_in_team("peter"))
+  end
+
+  def test_is_player_in_team__false
+    assert_equal(false, @sports_team.is_player_in_team("Jesus"))
+  end
 end
